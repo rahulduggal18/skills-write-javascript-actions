@@ -1,6 +1,10 @@
-name: "joke-action"
+name: "my joke action"
 
 description: "Uses external API and fetches a joke"
+
+outputs:
+  joke-output:
+    description: "Output from Joke API"
 
 runs:
   using: "node16"
