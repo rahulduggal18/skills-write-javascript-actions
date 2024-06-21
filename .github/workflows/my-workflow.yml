@@ -1,13 +1,16 @@
-name: JS Actions
+name: JS Actions workflow
 
 on:
   issues:
     types: [labeled]
 
 jobs:
-  action:
+  action-job:
     if: ${{ !github.event.repository.is_template }}
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+      - name: "fetch a joke"
+        uses: ./.github/joke-action
+
