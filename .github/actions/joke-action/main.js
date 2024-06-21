@@ -5,6 +5,7 @@ async function run() {
   const joke = await getJoke();
   console.log(joke);
   core.setOutput("joke-output", joke);
+  core.summary.addQuote(joke, 'Joke API')
 }
 
 run();

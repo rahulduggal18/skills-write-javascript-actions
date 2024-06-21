@@ -1,4 +1,3 @@
-const core = require('@actions/core');  
 const request = require("request-promise");
 
 const options = {
@@ -13,10 +12,6 @@ const options = {
 
 async function getJoke() {
   const res = await request(options);
-
-  core.summary.addQuote('To be or not to be', 'Shakespeare')
-  core.summary.addQuote(res.joke, 'Joke')
-
   return res.joke;
 }
 
