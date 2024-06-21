@@ -1,0 +1,7 @@
+name: "joke-action"
+
+description: "Uses external API and fetches a joke"
+
+runs:
+  using: "node16"
+  main: "main.js"
