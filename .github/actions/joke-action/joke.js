@@ -1,6 +1,4 @@
-import * as core from '@actions/core'
-
-  
+const core = require('@actions/core');  
 const request = require("request-promise");
 
 const options = {
@@ -16,17 +14,8 @@ const options = {
 async function getJoke() {
   const res = await request(options);
 
-  await core.summary
-.addHeading('Test Results')
-.addCodeBlock(generateTestResults(), "js")
-.addTable([
-  [{data: 'File', header: true}, {data: 'Result', header: true}],
-  ['Joke', res.joke],
-  ['bar.js', 'Fail ❌'],
-  ['test.js', 'Pass ✅']
-])
-.addLink('View staging deployment!', 'https://github.com')
-.write()
+  core.summary.addQuote('To be or not to be', 'Shakespeare')
+  core.summary.addQuote(res.joke, 'Joke')
 
   return res.joke;
 }
